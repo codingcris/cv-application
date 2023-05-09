@@ -1,0 +1,57 @@
+/* Set up the letter page container */
+#cv-edit {
+  width: 8.5in;
+  height: 11in;
+  padding: 0.75in;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .header {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 1fr 1fr;
+    .personal-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    #pro-summary {
+      flex: 1;
+      height: 200px;
+      resize: none;
+    }
+  }
+
+  .cv {
+    display: grid;
+    grid-template-areas:
+      "personal-info skills"
+      "educational work-experience";
+    gap: 0.5rem;
+    .personal {
+      grid-area: personal-info;
+    }
+
+    & > fieldset {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .educational {
+      grid-area: educational;
+    }
+
+    .professional {
+      grid-area: work-experience;
+    }
+  }
+}
+
+.placeholder-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
